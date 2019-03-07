@@ -1,0 +1,90 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="'navigation'"
+    [mode]="'side'"
+    [opened]="true"
+  >
+    <img class="logo" src="assets/logos/mi-liga.png" height="100" />
+    <label class="subtitle">General</label>
+    <mat-nav-list>
+      <a mat-list-item (click)="updateTitle('Equipos')" routerLink="/equipos"
+        >Equipos</a
+      >
+      <a
+        mat-list-item
+        (click)="updateTitle('Jugadores')"
+        routerLink="/jugadores"
+        >Jugadores</a
+      >
+      <a
+        mat-list-item
+        (click)="updateTitle('Calendario')"
+        routerLink="/calendarios"
+        >Calendario</a
+      >
+      <a mat-list-item (click)="updateTitle('Estadios')" routerLink="/estadios"
+        >Estadios</a
+      >
+      <a mat-list-item href="http://google.com">Buscador</a>
+      <a mat-list-item (click)="goToLink()">Documentación</a>
+    </mat-nav-list>
+
+    <mat-nav-list class="exit to-bottom">
+      <a mat-list-item href="#" (click)="closeWindow()"
+        >Salir <mat-icon>exit_to_app</mat-icon></a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="(isHandset$ | async)"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>{{ title }}</span> <span class="fill-horizontal"></span>
+      <div>
+        <button
+          mat-mini-fab
+          color="primary"
+          matTooltip="Cerrar ventana"
+          (click)="closeWindow()"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+        <button
+          mat-mini-fab
+          color="primary"
+          matTooltip="Minimizar ventana"
+          (click)="resizeWindow('min')"
+        >
+          <mat-icon>minimize</mat-icon>
+        </button>
+        <button
+          mat-mini-fab
+          color="primary"
+          matTooltip="Maximizar ventana"
+          (click)="resizeWindow('max')"
+        >
+          <mat-icon>maximize</mat-icon>
+        </button>
+        <button
+          mat-mini-fab
+          color="primary"
+          matTooltip="Ver en pantalla completa"
+          (click)="resizeWindow('full')"
+        >
+          <mat-icon>fullscreen</mat-icon>
+        </button>
+      </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

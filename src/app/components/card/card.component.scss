@@ -1,0 +1,19 @@
+.card {
+  max-width: 140px;
+  text-align: center;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 5px 6px 10px darkgrey;
+
+  .action-btn {
+    text-align: right;
+  }
+}
+
+.enable {
+  background-color: white;
+}
+
+.disable {
+  background-color: #ccc;
+}

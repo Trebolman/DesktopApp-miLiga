@@ -1,0 +1,40 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+  background-color: hsl(0, 0%, 29%);
+
+  .logo {
+    text-align: center;
+    margin-top: 2rem;
+    margin-left: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  a {
+    color: white;
+  }
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.subtitle {
+  color: #cccccc;
+  margin-left: 0.6rem;
+}
+
+.exit {
+  a mat-icon {
+    margin-left: 7rem;
+  }
+}

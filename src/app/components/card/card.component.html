@@ -1,0 +1,16 @@
+<mat-card class="card" [ngClass]="{ enable: data.estado, disable: !data.estado }">
+  <img *ngIf="data.logo" mat-card-image src="assets/logos/{{data.logo}}" />
+  <img *ngIf="data.foto" mat-card-image src="assets/fotos/{{data.foto}}" />
+  <mat-card-content>
+    <h1>{{ data.nombre }}</h1>
+  </mat-card-content>
+  <mat-card-actions class="action-btn">
+    <button *ngIf="data.logo" mat-stroked-button color="primary" (click)="goToLink(data.id)">
+      Ver {{ route }}
+    </button>
+
+    <button *ngIf="data.foto" mat-stroked-button color="primary" (click)="showDialog()">
+      Activar jugador
+    </button>
+  </mat-card-actions>
+</mat-card>
