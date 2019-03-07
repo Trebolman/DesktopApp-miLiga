@@ -1,0 +1,35 @@
+-- Instalacion de electron
+npm i electron -g
+
+-- Inicio rapido de una app
+git clone https://github.com/electron/electron-quick-start miPrimerApp
+
+-- Nos ubicamos en la carpeta e instalamos las dependencias
+
+-- Instalamos devtron
+npm i --save-dev devtron
+
+-- Instalamos devtron en el navegador
+require('devtron').install()
+
+-- Instalamos electron-reload
+npm i -d electron-reload
+
+-- Corremos la aplicacion
+electron .
+
+-- Angular-electron
+git clone https://github.com/maximegris/angular-electron AngularElectron
+AngularElectron/npm i
+
+-- Correr en el navegador normal
+npm run ng:serve:web
+
+-- Correr en electron
+npm run electron:serve
+
+-- Añadir Angular material
+ng add @angular/material
+
+-- Es necesario añadir a appModule 
+import {matButtonModule} from '@angular/material'
